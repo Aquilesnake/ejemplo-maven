@@ -11,6 +11,7 @@ pipeline {
                 }
                 stage('unit') {
                     steps {
+                        sleep 10
                         dir('C:\\Users\\AKLSNK\\Desktop\\clases DevOps\\Develoment\\Jenkinsfile\\ejemplo-maven'){
                                bat './mvnw.cmd clean test -e'
                         }
@@ -18,6 +19,7 @@ pipeline {
                 }
                 stage('jar') {
                     steps {
+                        sleep 10
                          dir('C:\\Users\\AKLSNK\\Desktop\\clases DevOps\\Develoment\\Jenkinsfile\\ejemplo-maven'){
                                bat './mvnw.cmd clean package -e'
                         }
@@ -25,6 +27,7 @@ pipeline {
                 }
                 stage('run') {
                     steps {
+                        sleep 20
                         dir('C:\\Users\\AKLSNK\\Desktop\\clases DevOps\\Develoment\\Jenkinsfile\\ejemplo-maven'){
                                bat 'start mvnw.cmd spring-boot:run'
                         }
@@ -33,7 +36,7 @@ pipeline {
                stage('test') {
                     steps {
                          dir('C:\\Users\\AKLSNK\\Desktop\\clases DevOps\\Develoment\\Jenkinsfile\\ejemplo-maven'){
-                             sleep 10
+                             sleep 20
                                bat 'curl -X GET "http://localhost:8081/rest/mscovid/test?msg=testing"'
                         }
                     }
