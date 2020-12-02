@@ -1,7 +1,7 @@
 # Getting Started
 
 ## Windows
-pruebas
+prueba 02 12 2020
 ### Compile Code
 * ./mvnw.cmd clean compile -e
 
