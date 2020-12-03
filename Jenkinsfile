@@ -25,6 +25,16 @@ pipeline {
                         }
                     }
                 }
+                    stage('SonarQube analysis') {
+                        steps {
+                                script{
+                        withSonarQubeEnv('sonar')
+                        bat 'mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
+                            }
+                        }
+                    }
+                }
+
                 stage('run') {
                     steps {
                         sleep 20
@@ -41,5 +51,7 @@ pipeline {
                         }
                     }
                 }
+        
+        
     }
 }
