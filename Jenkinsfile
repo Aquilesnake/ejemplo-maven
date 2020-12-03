@@ -1,3 +1,6 @@
+
+
+
 pipeline {
     agent any
 
@@ -28,7 +31,7 @@ pipeline {
                     stage('SonarQube analysis') {
                         steps {
                                 script{
-                        withSonarQubeEnv('sonar')
+                        withSonarQubeEnv('sonar'){
                         bat 'mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
                             }
                         }
