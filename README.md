@@ -1,7 +1,7 @@
 # Getting Started
 
 ## Windows
-prueba 02 12 2020
+Jenkinsfile
 ### Compile Code
 * ./mvnw.cmd clean compile -e
 
